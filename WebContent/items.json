@@ -1,0 +1,127 @@
+[ {
+  "id" : "11",
+  "name" : "Palacinke",
+  "price" : 300.0,
+  "description" : "Dodatak po izboru",
+  "restaurantId" : "3",
+  "amount" : 150,
+  "quantity" : 3,
+  "itemType" : "FOOD"
+}, {
+  "id" : "12",
+  "name" : "Koka Kola",
+  "price" : 150.0,
+  "description" : "Gazirani sok",
+  "restaurantId" : "1",
+  "amount" : 330,
+  "quantity" : 3,
+  "itemType" : "DRINK"
+}, {
+  "id" : "13",
+  "name" : "Fanta",
+  "price" : 150.0,
+  "description" : "Gazirani sok",
+  "restaurantId" : "7",
+  "amount" : 330,
+  "quantity" : 6,
+  "itemType" : "DRINK"
+}, {
+  "id" : "14",
+  "name" : "Pivo",
+  "price" : 200.0,
+  "description" : "Toceno",
+  "restaurantId" : "1",
+  "amount" : 500,
+  "quantity" : 4,
+  "itemType" : "DRINK"
+}, {
+  "id" : "1",
+  "name" : "Mala pljeska",
+  "price" : 150.0,
+  "description" : "U lepinji",
+  "restaurantId" : "7",
+  "amount" : 150,
+  "quantity" : 3,
+  "itemType" : "FOOD"
+}, {
+  "id" : "2",
+  "name" : "Velika pljeska",
+  "price" : 250.0,
+  "description" : "U lepinji",
+  "restaurantId" : "7",
+  "amount" : 200,
+  "quantity" : 11,
+  "itemType" : "FOOD"
+}, {
+  "id" : "3",
+  "name" : "Cevapi 10",
+  "price" : 300.0,
+  "description" : "U lepinji ili u tortilji",
+  "restaurantId" : "7",
+  "amount" : 200,
+  "quantity" : 7,
+  "itemType" : "FOOD"
+}, {
+  "id" : "4",
+  "name" : "Cevapi",
+  "price" : 350.0,
+  "description" : "Banjalucki u lepinji",
+  "restaurantId" : "2",
+  "amount" : 200,
+  "quantity" : 3,
+  "itemType" : "FOOD"
+}, {
+  "id" : "5",
+  "name" : "Mala pizza",
+  "price" : 150.0,
+  "description" : "Sunka, sir, masline",
+  "restaurantId" : "6",
+  "amount" : 150,
+  "quantity" : 6,
+  "itemType" : "FOOD"
+}, {
+  "id" : "6",
+  "name" : "Porodicna",
+  "price" : 600.0,
+  "description" : "Sunka, sir, masline",
+  "restaurantId" : "6",
+  "amount" : 500,
+  "quantity" : 5,
+  "itemType" : "FOOD"
+}, {
+  "id" : "7",
+  "name" : "Sarma",
+  "price" : 400.0,
+  "description" : "Kupus, rebarca",
+  "restaurantId" : "1",
+  "amount" : 500,
+  "quantity" : 4,
+  "itemType" : "FOOD"
+}, {
+  "id" : "8",
+  "name" : "Nesto kinesko",
+  "price" : 500.0,
+  "description" : "Domaca receptura",
+  "restaurantId" : "4",
+  "amount" : 300,
+  "quantity" : 3,
+  "itemType" : "FOOD"
+}, {
+  "id" : "9",
+  "name" : "Nesto indijski",
+  "price" : 500.0,
+  "description" : "Prilog soja sos",
+  "restaurantId" : "5",
+  "amount" : 300,
+  "quantity" : 2,
+  "itemType" : "FOOD"
+}, {
+  "id" : "10",
+  "name" : "Nesto indijski",
+  "price" : 500.0,
+  "description" : "Prilog soja sos",
+  "restaurantId" : "5",
+  "amount" : 300,
+  "quantity" : 1,
+  "itemType" : "FOOD"
+} ]

@@ -1,0 +1,36 @@
+[ {
+  "id" : "1",
+  "name" : "Minuta",
+  "address" : "Bulevar Oslobodjenja 22",
+  "restaurantCategory" : "HOMEMADE"
+}, {
+  "id" : "2",
+  "name" : "BUBI",
+  "address" : "Spens 2",
+  "restaurantCategory" : "BBQ"
+}, {
+  "id" : "3",
+  "name" : "Dizni",
+  "address" : "Centar 22",
+  "restaurantCategory" : "CANDY"
+}, {
+  "id" : "4",
+  "name" : "88",
+  "address" : "Bulevar 112",
+  "restaurantCategory" : "CHINESE"
+}, {
+  "id" : "5",
+  "name" : "Real India",
+  "address" : "Strazilovska 3",
+  "restaurantCategory" : "INDIAN"
+}, {
+  "id" : "6",
+  "name" : "Babos",
+  "address" : "Cirpanova 10",
+  "restaurantCategory" : "PIZZA"
+}, {
+  "id" : "7",
+  "name" : "Brena",
+  "address" : "Bulevar Oslobodjenja 56",
+  "restaurantCategory" : "BBQ"
+} ]

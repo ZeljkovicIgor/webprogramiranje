@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Projekat</title>
+	
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	
+<nav class="navbar">
+  <div class="container-fluid">
+  	<ul class="nav navbar-nav navbar-left">
+    	<li><a href="item/mostPopular" id="getMostPopularBtn">Najpopularnije</a></li>
+    	<li><a href="#" data-toggle="modal" data-target="#changeUserTypeModal">Promeni tip korisnika</a></li>
+    	<li><a href="#" data-toggle="modal" data-target="#createRestModal">Kreiraj novi restoran</a></li>
+    </ul>
+  	<ul class="nav navbar-nav navbar-right">
+    	<li><a href="#inputModal" class='loginNavUnregistered' data-toggle="modal" data-target="#inputModal">Prijava</a></li>
+    	<li><a href="#inputR" class='loginNavUnregistered' data-toggle="modal" data-target="#inputR">Registracija</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class='container-fluid row'>
+	<div class='mainHolder col-md-9'></div>
+	<div class='sidebarHolder list-group col-md-3'>
+		<a href="HOMEMADE" class="list-group-item list-group-item-action restCategoryBtn">Domaca kuhinja</a>
+		<a href="BBQ" class="list-group-item list-group-item-action restCategoryBtn">Rostilj</a>
+		<a href="CHINESE" class="list-group-item list-group-item-action restCategoryBtn">Kineska</a>
+		<a href="INDIAN" class="list-group-item list-group-item-action restCategoryBtn">Indijska</a>
+		<a href="CANDY" class="list-group-item list-group-item-action restCategoryBtn">Poslasticarnice</a>
+		<a href="PIZZA" class="list-group-item list-group-item-action restCategoryBtn">Picerije</a>
+		<a class="list-group-item list-group-item-action"></a>
+		<a href="restaurant/search" data-toggle="modal" data-target="#searchRestModal" class="list-group-item list-group-item-action">Pretraga restorana</a>
+		<a href="item/search" class="list-group-item list-group-item-action itemSearchBtn">Pretraga artikla</a>
+	</div>
+</div>
+
+
+
+
+<!-- 		MODALNI DIJALOG ZA REGISTRACIJU			 -->
+	<div class="modal fade" id="inputR" tabindex="-1" role="dialog">
+		 <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="exampleModalLabelReg">Registration</h5>
+		       </div>
+		       <form id="inputForm" data-toggle="validator" role="form" data-disable="true">
+		       <div class="modal-body">
+		       	<input type="hidden" id="idr" name="idr">
+		       	
+		       <div class="form-group ">
+		       		<label for="inputEmail1">Email address</label>
+    				<input type="email" name="emailRegistration" class="form-control" id="emailRegistration" aria-describedby="emailHelp" placeholder="Enter email" data-error="Unesite email" required/>
+		       		<div class="help-block with-errors"></div>
+		       </div>
+		       <div class="form-group ">
+		       		<label for="ime">Username</label>
+		       		<input type="text" name="usernameRegistration" class="form-control" id="usernameRegistration" aria-describedby="usernameHelp" placeholder="Userame" data-error="Unesite korisnicko ime" required/>
+		       		<div class="help-block with-errors"></div>
+		       	</div>
+		       <div class="form-group ">
+		       		<label for="passregistration">Password</label>
+		       		<input type="password"  name="passwordRegistration" class="form-control" id="passwordR" aria-describedby="passHelp" placeholder="Password" data-error="Unesite sifru"  required/>
+		       		<div class="help-block with-errors"></div>
+		       	</div>
+		       <div class="form-group ">
+		       		<label for="confirmpass">Confirm password</label>
+		       		<input type="password" name="confirmPasswordRegistration"class="form-control" id="confirmPasswordRegistration" aria-describedby="passHelp" placeholder="Confirm password" data-error="Ponovite sifru" required/>
+		       		<div class="help-block with-errors"></div>
+		       	</div>
+		       	<div class="form-group ">
+		       		<label for="ime">Name</label>
+		       		<input type="text" name="nameRegistration" class="form-control" id="nameRegistration" aria-describedby="nameHelp" placeholder="Name" data-error="Unesite ime" required/>
+		       		<div class="help-block with-errors"></div>
+		       	</div>
+		       	<div class="form-group ">
+		       		<label for="surname">Surname</label>
+		       		<input type="text" name="surnameRegistration" class="form-control" id="surnameRegistration" aria-describedby="nameHelp" placeholder="Surname" data-error="Unesite prezime" required/>
+		       		<div class="help-block with-errors"></div>
+		       	</div>
+		       	
+		  		<div class="form-group ">
+		       		<label for="grad">Phone number</label>
+		       		<input type="text" name="phoneNumberRegistration" class="form-control" id="phoneNumberRegistration" aria-describedby="numberHelp" placeholder="Phone number"  pattern="[0-9]{1,}"  data-error="Unesite broj telefona" required/>
+		       		<div class="help-block with-errors"></div>
+		       	</div>
+		       </div>
+		       <div class="modal-footer">
+		        	<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		        	<button type="button" class="btn btn-primary" id="register">Submit</button>
+				</div>
+				</form>
+		     </div>
+		</div>
+	</div>
+	
+<!-- 		MODALNI DIJALOG ZA LOGOVANJE			 -->
+	<div class="modal fade" id="inputModal" tabindex="-1" role="dialog">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLabel">Log in</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <form id="inputFormLogin" data-toggle="validator" role="form" data-disable="true">
+	      <div class="modal-body">
+				<input type="hidden" name="id" id="id" />
+				
+				<div class="form-group ">
+					<label for="username"  class="control-label">Username:</label> <input type="text" class="form-control" name="username" id="usernameLogin" placeholder="Enter username" data-error="Unesite korisnicko ime" required/>
+					<div class="help-block with-errors"></div>
+				</div>
+				<div class="form-group ">
+					<label for="password"  class="control-label">Password:</label> <input type="password" class="form-control" name="password" id="password" placeholder="Password" data-error="Unesite sifru" required/>
+					<div class="help-block with-errors"></div>
+				</div>	
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	        <button type="button" class="btn btn-primary" data-dismiss="modal" id="login" >Log in</button>
+	      </div>
+	      </form>
+	    </div>
+	  </div>
+	</div>
+	
+	
+	<div class="modal fade" id="searchRestModal" tabindex="-1" role="dialog">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLabel">Search</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <form id="inputFormSearchRest" data-toggle="validator" role="form" data-disable="true">
+	      <div class="modal-body">
+				<div class="form-group ">
+					<input type="text" class="form-control" name="username" id="searchRestName" placeholder="Naziv"/>
+				</div>
+				<div class="form-group ">
+					<input type="text" class="form-control" name="username" id="searchRestAddress" placeholder="Adresa"/>
+				</div>
+				<div class="form-group ">
+					<select class="form-control" id="searchRestCategory">
+						<option>NULL</option>
+						<option>HOMEMADE</option>
+						<option>BBQ</option>
+						<option>INDIAN</option>
+						<option>CHINESE</option>
+						<option>CANDY</option>
+						<option>PIZZA</option>
+					</select>
+				</div>
+					
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	        <button type="button" class="btn btn-primary" data-dismiss="modal" id="searchRest" >Search</button>
+	      </div>
+	      </form>
+	    </div>
+	  </div>
+	</div>
+	
+	<div class="modal fade" id="createRestModal" tabindex="-1" role="dialog">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLabel">Create</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <form id="inputFormCreateRest" data-toggle="validator" role="form" data-disable="true">
+	      <div class="modal-body">
+				<div class="form-group ">
+					<input type="text" class="form-control" name="username" id="createRestName" placeholder="Naziv"/>
+				</div>
+				<div class="form-group ">
+					<input type="text" class="form-control" name="username" id="createRestAddress" placeholder="Adresa"/>
+				</div>
+				<div class="form-group ">
+					<select class="form-control" id="createRestCategory">
+						<option>NULL</option>
+						<option>HOMEMADE</option>
+						<option>BBQ</option>
+						<option>INDIAN</option>
+						<option>CHINESE</option>
+						<option>CANDY</option>
+						<option>PIZZA</option>
+					</select>
+				</div>
+					
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	        <button type="button" class="btn btn-primary" data-dismiss="modal" id="createRest" >Create</button>
+	      </div>
+	      </form>
+	    </div>
+	  </div>
+	</div>
+	
+	<div class="modal fade" id="createItemModal" tabindex="-1" role="dialog">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLabel">Create</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <form id="inputFormCreateItem" data-toggle="validator" role="form" data-disable="true">
+	      <div class="modal-body">
+	      		<input id="createItemRestaurant" style='display: none'/>
+				<div class="form-group ">
+					<input type="text" class="form-control" name="username" id="createItemName" placeholder="Naziv"/>
+				</div>
+				<div class="form-group ">
+					<input type="text" class="form-control" name="username" id="createItemPrice" placeholder="Cena"/>
+				</div>
+				<div class="form-group ">
+					<input type="text" class="form-control" name="username" id="createItemAmount" placeholder="Kolicina"/>
+				</div>
+				<div class="form-group ">
+					<input type="text" class="form-control" name="username" id="createItemDescription" placeholder="Opis"/>
+				</div>
+				<div class="form-group ">
+					<select class="form-control" id="createItemType">
+						<option>FOOD</option>
+						<option>DRINK</option>
+					</select>
+				</div>
+					
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	        <button type="button" class="btn btn-primary" data-dismiss="modal" id="createItem" >Create</button>
+	      </div>
+	      </form>
+	    </div>
+	  </div>
+	</div>
+	
+	<div class="modal fade" id="changeUserTypeModal" tabindex="-1" role="dialog">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLabel">Search</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <form id="changeUserTypeForm" data-toggle="validator" role="form" data-disable="true">
+	      <div class="modal-body">
+				<div class="form-group ">
+					<input type="text" class="form-control" name="username" id="changeUserTypeName" placeholder="Korisnicko ime"/>
+				</div>
+				<div class="form-group ">
+					<select class="form-control" id="changeUserTypeType">
+						<option>ADMIN</option>
+						<option>BUYER</option>
+						<option>DELIVERER</option>
+					</select>
+				</div>
+					
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	        <button type="button" class="btn btn-primary" data-dismiss="modal" id="changeUserType" >Promeni</button>
+	      </div>
+	      </form>
+	    </div>
+	  </div>
+	</div>
+	
+	
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>	
+<script src="js/admin.js"></script>	
+</body>
+</html>
